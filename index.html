@@ -28,7 +28,7 @@
                     <button type="button" class="btn btn-secondary m-1" onclick="ulang()">Reset</button>
                 </div>
                 <div class="col-12">
-                    <input type="text" class="form-control" placeholder="Result" readonly>
+                    <input id="hasil" type="text" class="form-control" placeholder="Result" readonly>
                 </div>
             </form>
         </div>
@@ -68,7 +68,7 @@
                         break;
                 }
 
-                document.getElementById("result").value = hasil;
+                document.getElementById("hasil").value = hasil;
             }
             function ulang(){
                 document.getElementById("value1").value = "";
