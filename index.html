@@ -37,10 +37,15 @@
 
             }
             function kalkulasi(op){
-
+                let n1 = document.getElementById("value1").value.trim();
+                let n2 = document.getElementById("value2").value.trim();
+                if (!validasiInput(n1,n2)) return;
+                n1=Number(n1);
+                n2=Number(n2);
+                let output="";
             }
             function ulang(){
-                
+
             }
         </script>
 </body>
