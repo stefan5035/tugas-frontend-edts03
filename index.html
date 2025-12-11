@@ -58,7 +58,17 @@
                 if (!validasiInput(n1,n2)) return;
                 n1=Number(n1);
                 n2=Number(n2);
-                let output="";
+                let hasil="";
+                switch (op) {
+                    case "+": hasil = n1 + n2; break;
+                    case "-": hasil = n1 - n2; break;
+                    case "*": hasil = n1 * n2; break;
+                    case "/": 
+                        hasil=n2 === 0 ? "Cannot divide by zero" : n1 / n2;  
+                        break;
+                }
+
+                document.getElementById("result").value = hasil;
             }
             function ulang(){
 
