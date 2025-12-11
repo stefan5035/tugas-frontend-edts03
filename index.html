@@ -34,7 +34,23 @@
         </div>
         <script>
             function validasiInput(n1, n2) {
-
+                if (n1===""&&n2==="") {
+                    alert("Please enter something in Value 1 and Value 2");
+                    return false;
+                }
+                if (n1==="") {
+                    alert("Please enter something in Value 1");
+                    return false;
+                }
+                if (n2==="") {
+                    alert("Please enter something in Value 2");
+                    return false;
+                }
+                if (isNaN(n1)||isNaN(n2)) {
+                    alert("Value 1 and value 2 must be numeric");
+                    return false;
+                }
+                return true;
             }
             function kalkulasi(op){
                 let n1 = document.getElementById("value1").value.trim();
