@@ -15,17 +15,17 @@
             <hr />
             <form class="row g-3" id="calculator-form">
                 <div class="col-12">
-                    <input type="text" class="form-control mb-2" placeholder="Value 1">
+                    <input id="value1" type="text" class="form-control mb-2" placeholder="Value 1">
                 </div>
                 <div class="col-12">
-                    <input type="text" class="form-control" placeholder="Value 2">
+                    <input id="value2" type="text" class="form-control" placeholder="Value 2">
                 </div>
                 <div class="col-12 d-flex justify-content-center mb-2">
-                    <button type="button" class="btn btn-primary m-1">+</button>
-                    <button type="button" class="btn btn-primary m-1">-</button>
-                    <button type="button" class="btn btn-primary m-1">*</button>
-                    <button type="button" class="btn btn-primary m-1">/</button>
-                    <button type="button" class="btn btn-secondary m-1">Reset</button>
+                    <button type="button" class="btn btn-primary m-1" onclick="kalkulasi('+')">+</button>
+                    <button type="button" class="btn btn-primary m-1" onclick="kalkulasi('-')">-</button>
+                    <button type="button" class="btn btn-primary m-1" onclick="kalkulasi('*')">*</button>
+                    <button type="button" class="btn btn-primary m-1" onclick="kalkulasi('/')">/</button>
+                    <button type="button" class="btn btn-secondary m-1" onclick="ulang()">Reset</button>
                 </div>
                 <div class="col-12">
                     <input type="text" class="form-control" placeholder="Result">
@@ -34,15 +34,15 @@
         </div>
         <script>
             function validasiInput(n1, n2) {
-                if (n1===""&&n2==="") {
+                if (n1 === "" && n2 === "") {
                     alert("Please enter something in Value 1 and Value 2");
                     return false;
                 }
-                if (n1==="") {
+                if (n1 === "") {
                     alert("Please enter something in Value 1");
                     return false;
                 }
-                if (n2==="") {
+                if (n2 === "") {
                     alert("Please enter something in Value 2");
                     return false;
                 }
@@ -55,7 +55,7 @@
             function kalkulasi(op){
                 let n1 = document.getElementById("value1").value.trim();
                 let n2 = document.getElementById("value2").value.trim();
-                if (!validasiInput(n1,n2)) return;
+                if (!validasiInput(n1, n2)) return;
                 n1=Number(n1);
                 n2=Number(n2);
                 let hasil="";
@@ -71,7 +71,9 @@
                 document.getElementById("result").value = hasil;
             }
             function ulang(){
-
+                document.getElementById("value1").value = "";
+                document.getElementById("value2").value = "";
+                document.getElementById("result").value = "";
             }
         </script>
 </body>
