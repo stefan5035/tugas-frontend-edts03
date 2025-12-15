@@ -46,10 +46,11 @@
                     alert("Value 2 is required");
                     return false;
                 }
-                if(v1===NaN&&v2===NaN){
+                if(isNaN(v1)&&isNaN(v2)){
                     alert("Value 1 and 2 must be number");
                     return false;
                 }
+                return true;
             }
             function operate(op){
                 let v1 = document.getElementById("value1").value.trim;
@@ -59,11 +60,14 @@
                 v2=Number(v2);
                 let result="";
                 switch(op){
-                    case "+" :
-                    case "-" :
-                    case "*" :
-                    case "/" :
+                    case "+" : result=v1+v2; break
+                    case "-" : result=v1-v2; break
+                    case "*" : result=v1*v2; break
+                    case "/" : result = v2 === 0 ? "Cannot divide by zero":
+                    v1/v2; break;
                 }
+                document.getElementById("result").value= result;
+                
             }
             function reset(){
                 document.getElementById("value1").value= "";
