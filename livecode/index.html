@@ -14,10 +14,10 @@
             <h2>Mini Calculator</h2>
             <form>
                 <div class="mb-2">
-                    <input class="form-control" id="value1" placeholder="Value 1" text>
+                    <input class="form-control" id="value1" placeholder="Value 1" type="text">
                 </div>
                 <div class="mb-2">
-                    <input class="form-control" id="value2" placeholder="Value 2" text>
+                    <input class="form-control" id="value2" placeholder="Value 2" type="text">
                 </div>
                 <div class="justify-content-center mb-2 d-flex col-12">
                     <button type="button" class="btn btn-primary m-1" onclick="operate('+')">+</button>
@@ -34,15 +34,41 @@
     </div>
         <script>
             function validateInputs(v1,v2){
-
+                if(v1===""&&v2===""){
+                    alert("Value 1 and 2 is required");
+                    return false;
+                }
+                if(v1===""){
+                    alert("Value 1 is required");
+                    return false;
+                }
+                if(v2===""){
+                    alert("Value 2 is required");
+                    return false;
+                }
+                if(v1===NaN&&v2===NaN){
+                    alert("Value 1 and 2 must be number");
+                    return false;
+                }
             }
             function operate(op){
-                
+                let v1 = document.getElementById("value1").value.trim;
+                let v2 = document.getElementById("value2").value.trim;
+                if(!validateInputs(v1,v2))return;
+                v1=Number(v1);
+                v2=Number(v2);
+                let result="";
+                switch(op){
+                    case "+" :
+                    case "-" :
+                    case "*" :
+                    case "/" :
+                }
             }
             function reset(){
-                document.getElementById("value1").innerHTML= "";
-                document.getElementById("value2").innerHTML= "";
-                document.getElementById("result").innerHTML= "";
+                document.getElementById("value1").value= "";
+                document.getElementById("value2").value= "";
+                document.getElementById("result").value= "";
             }
         </script>
 </body>
