@@ -10,24 +10,24 @@
 
 <body>
     <div class="container">
-        <div class="">
+        <div class="content">
             <h2>Mini Calculator</h2>
             <form>
-                <div class="form-label">
-                    <input id="value1" placeholder="Value 1" text>
+                <div class="mb-2">
+                    <input class="form-control" id="value1" placeholder="Value 1" text>
                 </div>
-                <div class="form-label">
-                    <input id="value2" placeholder="Value 2" text>
+                <div class="mb-2">
+                    <input class="form-control" id="value2" placeholder="Value 2" text>
                 </div>
-                <div>
-                <button onclick="">+</button>
-                <button onclick="">-</button>
-                <button onclick="">*</button>
-                <button onclick="">/</button>
-                <button>Reset</button>
+                <div class="justify-content-center mb-2 d-flex col-12">
+                    <button type="button" class="btn btn-primary m-1" onclick="">+</button>
+                    <button type="button" class="btn btn-primary m-1" onclick="">-</button>
+                    <button type="button" class="btn btn-primary m-1" onclick="">*</button>
+                    <button type="button" class="btn btn-primary m-1" onclick="">/</button>
+                    <button type="button" class="btn btn-secondary m-1" onclick="">Reset</button>
                 </div>
-                <div class="form-label">
-                    <input id="result" placeholder="Result" disabled readonly>
+                <div class="mb-2">
+                    <input class="form-control" id="result" placeholder="Result" disabled readonly>
                 </div>
             </form>
         </div>
